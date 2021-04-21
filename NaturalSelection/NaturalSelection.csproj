@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>1aba3a4c-f955-480a-af05-88d4e5743ac1</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,6 +16,12 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NaturalSelection.Application\NaturalSelection.Application.csproj" />
+    <ProjectReference Include="..\NaturalSelection.Data\NaturalSelection.Core.csproj" />
+    <ProjectReference Include="..\NaturalSelection.Infrastructure\NaturalSelection.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

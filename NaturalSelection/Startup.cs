@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using NaturalSelection.Core.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,10 +29,9 @@ namespace NaturalSelection
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            //services.AddDbContext<>(opt =>
-            //opt.UseSqlServer("NaturalSelectionConnect")
-            //.EnableSensitiveDataLogging()
-            //.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking());
+            services.AddDbContext<NaturalSelectionContext>(opt =>
+            opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+            .EnableSensitiveDataLogging().UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
 
             services.AddSwaggerGen(c =>
             {

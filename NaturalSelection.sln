@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NaturalSelection.Core", "Na
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NaturalSelection.Infrastructure", "NaturalSelection.Infrastructure\NaturalSelection.Infrastructure.csproj", "{FC634CBA-07DD-4E9F-B825-52C14C3389B4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NaturalSelection.Api", "NaturalSelection.Application\NaturalSelection.Api.csproj", "{25B9D9E1-D907-4828-A04E-A176EFB5750F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NaturalSelection.Application", "NaturalSelection.Application\NaturalSelection.Application.csproj", "{25B9D9E1-D907-4828-A04E-A176EFB5750F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+    <Folder Include="Forums\" />
+    <Folder Include="Tags\" />
+    <Folder Include="Comments\" />
+    <Folder Include="Images\" />
+    <Folder Include="User\GetUsers\" />
+    <Folder Include="User\DeleteUsers\" />
+    <Folder Include="User\UpdateUsers\" />
+    <Folder Include="User\SaveUsers\" />
+    <Folder Include="Posts\" />
+  </ItemGroup>
+
+</Project>
