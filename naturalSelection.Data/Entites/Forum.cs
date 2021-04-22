@@ -1,4 +1,5 @@
-﻿using NaturalSelection.Core.General;
+﻿using NaturalSelection.Core.Common;
+using NaturalSelection.Core.General;
 using NaturalSelection.Data;
 using NaturalSelection.Data.Entites;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace NaturalSelection.Core.Entites
 {
-    public class Forum
+    public class Forum : AuditableEntity
     {
         public Guid ForumId { get; set; }
         public bool IsPrivate { get; set; }
