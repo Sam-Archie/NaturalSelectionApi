@@ -1,4 +1,5 @@
 ﻿using NaturalSelection.Core.Common;
+using NaturalSelection.Core.Entites;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -27,6 +28,10 @@ namespace NaturalSelection.Data.Entites
         public IList<Post> Posts { get; set; }
         public IList<Comment> Comments { get; set; }
         public IList<Tag> Tags { get; set; }
+        public IList<Image> Images { get; set; }
         public string Password { get; set; }
+        public Image ProfileImage { get; set; }
+        public IList<Forum> Forums { get; set; }
+
     }
 }

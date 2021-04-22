@@ -1,13 +1,15 @@
-﻿using NaturalSelection.Data.Entites;
-using System;
+﻿using System;
+using NaturalSelection.Core.Entites;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NaturalSelection.Data.Entites;
 
 namespace NaturalSelection.Application.Contracts.Persistance
 {
-    interface IUserRepository : IAsyncRepository<User>
+    public interface IUserRepository : IAsyncRepository<User>
     {
+
     }
 }
