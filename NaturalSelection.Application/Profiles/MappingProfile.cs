@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using NaturalSelection.Application.Features.Users.Commands.CreateUser;
 using NaturalSelection.Application.Features.Users.Queries.GetUsersQuery;
 using NaturalSelection.Data.Entites;
 using System;
@@ -16,6 +17,7 @@ namespace NaturalSelection.Application.Profiles
         public MappingProfile()
         {
             CreateMap<User, UserListVm>().ReverseMap();
+            CreateMap<User, CreateUserCommand>().ReverseMap();
         }
     }
 }

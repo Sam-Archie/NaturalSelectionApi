@@ -28,6 +28,7 @@ namespace NaturalSelection.Application.Features.Users.Queries.GetUsersQuery
         public async Task<List<UserListVm>> Handle(GetUserListQuery request, CancellationToken cancellationToken)
         {
             var listOfAllUsers = (await _userRepository.ListAllAsync()).OrderBy(x => x.UserName);
+           
             return _mapper.Map<List<UserListVm>>(listOfAllUsers);
         }
     }

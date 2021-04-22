@@ -11,7 +11,5 @@ namespace NaturalSelection.Application.Features.Users.Queries.GetUsersQuery
     {
         public Guid Id { get; set; }
         public string UserName { get; set; }
-        public Image ProfileImage { get; set; }
-        public IList<Post> Posts { get; set; }
     }
 }

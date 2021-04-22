@@ -25,13 +25,13 @@ namespace NaturalSelection.Data.Entites
         public string Email { get; set; }
         public bool IsSubscribed { get; set; }
         private bool IsAdmin { get; set; }
-        public IList<Post> Posts { get; set; }
-        public IList<Comment> Comments { get; set; }
-        public IList<Tag> Tags { get; set; }
-        public IList<Image> Images { get; set; }
+        public IList<Post> Posts { get; set; } = new List<Post>();
+        public IList<Comment> Comments { get; set; } = new List<Comment>();
+        public IList<Tag> Tags { get; set; } = new List<Tag>();
+        public IList<Image> Images { get; set; } = new List<Image>();
         public string Password { get; set; }
         public Image ProfileImage { get; set; }
-        public IList<Forum> Forums { get; set; }
+        public IList<Forum> Forums { get; set; } = new List<Forum>();
 
     }
 }

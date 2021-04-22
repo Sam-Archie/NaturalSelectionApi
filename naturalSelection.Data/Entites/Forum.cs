@@ -16,9 +16,9 @@ namespace NaturalSelection.Core.Entites
         public Guid ForumId { get; set; }
         public bool IsPrivate { get; set; }
         public string Name { get; set; }
-        public IList<Post> Posts { get; set; }
-        public IList<User> Users { get; set; }
-        public IList<Tag> Tags { get; set; }
-        public SecurityLevel SecurityLevels { get; set; }
+        public IList<Post> Posts { get; set; } = new List<Post>();
+        public IList<User> Users { get; set; } = new List<User>();
+        public IList<Tag> Tags { get; set; } = new List<Tag>();
+       public SecurityLevel SecurityLevels { get; set; }
     }
 }
