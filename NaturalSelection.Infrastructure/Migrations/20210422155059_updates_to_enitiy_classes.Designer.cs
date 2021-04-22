@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NaturalSelection.Core.Data;
 
 namespace NaturalSelection.Infrastructure.Migrations
 {
     [DbContext(typeof(NaturalSelectionContext))]
-    partial class NaturalSelectionContextModelSnapshot : ModelSnapshot
+    [Migration("20210422155059_updates_to_enitiy_classes")]
+    partial class updates_to_enitiy_classes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

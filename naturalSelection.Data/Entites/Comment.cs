@@ -10,6 +10,6 @@ namespace NaturalSelection.Data.Entites
         public string Content { get; set; }
         public User User { get; set; }
         public int Likes { get; set; }
-        public IList<Comment> Replies { get; set; }
+        public IList<Comment> Replies { get; set; } = new List<Comment>();
     }
 }
