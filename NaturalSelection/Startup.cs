@@ -9,7 +9,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using NaturalSelection.Application.Contracts.Infrastructure;
+using NaturalSelection.Application.Contracts.Persistance;
+using NaturalSelection.Application.Models.Mail;
 using NaturalSelection.Core.Data;
+using NaturalSelection.Infrastructure.Mail;
+using NaturalSelection.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,9 +35,17 @@ namespace NaturalSelection
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.Configure<EmailSettings>(Configuration.GetSection("EmailSettings"));
+            services.AddTransient<IEmailService, EmailService>();
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddControllers();
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+            });
             services.AddDbContext<NaturalSelectionContext>(opt =>
             opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
             .EnableSensitiveDataLogging().UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
@@ -58,6 +71,8 @@ namespace NaturalSelection
             app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthorization();
+
+            app.UseCors("Open");
 
             app.UseEndpoints(endpoints =>
             {
