@@ -10,6 +10,6 @@ namespace NaturalSelection.Application.Contracts.Persistance
 {
     public interface IUserRepository : IAsyncRepository<User>
     {
-
+        Task<bool> IsUserNameUnique(string userName);
     }
 }
